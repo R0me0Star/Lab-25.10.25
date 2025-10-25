@@ -2,5 +2,19 @@
 
 int main()
 {
-
+	using u_t = unsigned;
+	u_t a = 0;
+	size_t count = 0;
+ 
+	while (std::cin >> a) {
+		count ++;
+	}
+	if (std::cin.eof()) {
+		std::cout << 1;
+		std::cout << "\n";
+	}
+	else if (std::cin.fail()) {
+		std::cerr << "input err\n";
+		return 1;
+	}
 }
