@@ -1,12 +1,12 @@
 #include <iostream>
 
-const unsigned MAX_U = 4294967295u; // Константа предела переполнения unsigned
+const unsigned MAX_U = 4294967295u; // Overflow constant for unsigned
 
 bool isPyth(unsigned a, unsigned b, unsigned c) {
-	if ((a != 0 && a > MAX_U / a) || // Проверка переполнения
+	if ((a != 0 && a > MAX_U / a) || // Overflow check
 		(b != 0 && b > MAX_U / b) ||
 		(c != 0 && c > MAX_U / c)) {
-		throw 2; // Выброс кода ошибки переполнения из функции
+		throw 2; // Error 2 throw from function
 	}
 	bool p = a == b * b + c * c;
 	p = p || b * b == a * a + c * c;
@@ -23,7 +23,7 @@ int main() {
 	while (std::cin >> c) {
 		try {
 			count += isPyth(a, b, c) ? 1 : 0;
-		} catch (int code) { // Вылавливание ошибки переполнения из функции
+		} catch (int code) { // Catching error 2 from function
 			std::cerr << "Overflow error\n";
 			return 2;
 		}
@@ -34,7 +34,7 @@ int main() {
 		std::cout << count;
 		std::cout << "\n";
 	}
-	else if (std::cin.fail()) { // Ошибка ввода
+	else if (std::cin.fail()) {
 		std::cerr << "Input error\n";
 		return 1;
 	}
