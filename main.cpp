@@ -30,14 +30,13 @@ int main() {
     }
     a = b;
 		b = c;
-	}
+  }
   if (std::cin.eof()) {
     std::cout << count;
     std::cout << "\n";
-	}
+  }
   else if (std::cin.fail()) {
     std::cerr << "Input error\n";
     return 1;
   }
 }
-
