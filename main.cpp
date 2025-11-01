@@ -24,14 +24,14 @@ int main() {
     try {
       count += isPyth(a, b, c) ? 1 : 0;
     }
-		catch (int code) { // Catching error 2 from function
-				std::cerr << "Overflow error\n";
-				return 2;
+    catch (int code) { // Catching error 2 from function
+      std::cerr << "Overflow error\n";
+      return 2;
     }
     a = b;
 		b = c;
 	}
-	if (std::cin.eof()) {
+  if (std::cin.eof()) {
     std::cout << count;
     std::cout << "\n";
 	}
@@ -40,3 +40,4 @@ int main() {
     return 1;
   }
 }
+
